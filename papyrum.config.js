@@ -12,7 +12,7 @@ export default {
   favicon: 'img/favicon.ico',
   title: '',
   typescript: true,
-  homepage: 'https://github.com/peru-com/perucom-ui',
+  homepage: 'https://github.com/peru-com/ui',
   menu: [
     'Introduction',
     'Components'

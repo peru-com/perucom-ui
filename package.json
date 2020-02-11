@@ -1,5 +1,5 @@
 {
-  "name": "perucom-ui",
+  "name": "@peru-com/ui",
   "version": "0.1.0",
   "description": "Perucom UI is a library of components made in ReactJS",
   "main": "dist/index.js",
@@ -10,13 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/peru-com/perucom-ui.git"
+    "url": "git+https://github.com/peru-com/ui"
   },
   "keywords": [
     "documentation",
     "react"
   ],
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peru-com/ui/issues"
+  },
+  "homepage": "https://github.com/peru-com/ui#readme",
   "dependencies": {
     "@papyrum/cli": "1.9.1-alpha.0",
     "typescript": "3.7.5"
