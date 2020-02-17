@@ -1,5 +1,5 @@
 import styled, { css, keyframes  } from 'styled-components';
-import { SIZES, COLORS, VARIANTS } from './constants';
+import { SIZES, VARIANTS_COLORS, VARIANTS } from './constants';
 
 interface Props {
   width?: number;
@@ -38,25 +38,25 @@ export const ButtonStyled = styled.button`
     && SIZES[props.size]};
 
   ${(props: Props) => VARIANTS.includes(props.variant) && css`
-    background-color: ${COLORS[props.variant].background};
-    border: 1px solid ${COLORS[props.variant].border};
-    color: ${COLORS[props.variant].text};
+    background-color: ${VARIANTS_COLORS[props.variant].background};
+    border: 1px solid ${VARIANTS_COLORS[props.variant].border};
+    color: ${VARIANTS_COLORS[props.variant].text};
 
     &:hover {
-      background-color: ${COLORS[props.variant].hover};
+      background-color: ${VARIANTS_COLORS[props.variant].hover};
       transition: linear .4s;
     }
   `}
 
   ${(props: Props) => (VARIANTS.includes(props.variant) && props.isOutlined) && css`
-    background-color: ${COLORS[props.variant].text};
-    border: 1px solid ${COLORS[props.variant].border};
-    color: ${COLORS[props.variant].background};
+    background-color: ${VARIANTS_COLORS[props.variant].text};
+    border: 1px solid ${VARIANTS_COLORS[props.variant].border};
+    color: ${VARIANTS_COLORS[props.variant].background};
 
     &:hover {
-      background-color: ${COLORS[props.variant].background};
-      border: 1px solid ${COLORS[props.variant].border};
-      color: ${COLORS[props.variant].text};
+      background-color: ${VARIANTS_COLORS[props.variant].background};
+      border: 1px solid ${VARIANTS_COLORS[props.variant].border};
+      color: ${VARIANTS_COLORS[props.variant].text};
       transition: linear .4s;
     }
   `}
@@ -88,8 +88,8 @@ export const Loading = styled.div`
   animation: ${animationLoading} .6s linear infinite;
 
   ${(props: Props) => props.variant && css`
-    border: 2px solid ${COLORS[props.variant].text};
-    border-top: 2px solid ${COLORS[props.variant].background};
+    border: 2px solid ${VARIANTS_COLORS[props.variant].text};
+    border-top: 2px solid ${VARIANTS_COLORS[props.variant].background};
   `}
 `;
 

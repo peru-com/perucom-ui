@@ -15,6 +15,7 @@ export default {
   homepage: 'https://github.com/peru-com/ui',
   menu: [
     'Introduction',
+    'Colors',
     'Components'
   ],
   template: 'static/index.html',

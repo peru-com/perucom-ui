@@ -10,6 +10,7 @@ interface Props {
   isOutlined?: boolean;
   size?: string;
   variant?: string;
+  onClick?: Function;
   children?: any;
 }
 
@@ -21,6 +22,7 @@ export const Button: React.FC<Props> = ({
   isOutlined,
   size,
   variant,
+  onClick,
   children
 }) => {
 
@@ -47,6 +49,7 @@ export const Button: React.FC<Props> = ({
       variant={variant}
       isDisabled={isDisabled}
       isOutlined={isOutlined}
+      onClick={onClick}
     >
       {children}
     </ButtonStyled>
@@ -74,8 +77,9 @@ Button.propTypes = {
     'danger',
     'warning'
   ]),
+  onClick: PropTypes.func,
   children: PropTypes.any
-}
+};
 
 Button.defaultProps = {
   size: 'normal',

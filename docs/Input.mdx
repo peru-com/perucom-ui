@@ -1,0 +1,121 @@
+---
+status: development
+menu: Components
+---
+
+import { Input, InputGroups } from '../src/components/Input';
+import { IconSearch } from '../src/icons';
+
+# Input
+
+```js
+import { Input } from '@peru-com/ui';
+```
+## Basic usage
+
+<Playground>
+  <Input name="name" placeholder="Peru.com" />
+</Playground>
+
+## Values
+
+To indicate an input its value, use the ***value*** prop.
+
+<Playground>
+  <Input name="name" placeholder="Enter your lastname..." value="Friedze" />
+</Playground>
+
+## Disabled
+
+To indicate an input is disabled, use the ***isDisabled*** prop.
+
+<Playground>
+  <Input name="name" value="Friedze" isDisabled />
+</Playground>
+
+## Types
+
+To indicate an input type, use the ***type*** prop.
+
+<Playground>
+  <InputGroups>
+    <Input name="name" type="text" value="Friedze" />
+    <Input name="name" type="number" value="123123" />
+  </InputGroups>
+</Playground>
+
+## Display
+
+To take full width of the parent element, use ***fullWidth*** prop.
+
+<Playground>
+  <InputGroups>
+    <Input name="name" value="Friedze" />
+    <Input name="name" value="Friedze" fullWidth />
+  </InputGroups>
+</Playground>
+
+## Custom width
+
+Custom button width, use ***width*** prop.
+
+<Playground>
+  <InputGroups>
+    <Input name="name" value="Friedze" width={200} />
+    <Input name="name" value="Friedze" width={300} />
+    <Input name="name" value="Friedze" width={400} />
+  </InputGroups>
+</Playground>
+
+## Events onChange onKeyDown
+
+Get value on events, use ***onChange*** or ***onKeyDown*** prop.
+
+<Playground>
+  <InputGroups>
+    <Input 
+      name="name" 
+      value="Friedze" 
+      onChange={(value) => console.log(value, '<- onChange value')} 
+    />
+    <Input 
+      name="lastname" 
+      value="Nietze" 
+      onKeyDown={(value) => console.log(value, '<- onKeyDown value')} 
+    />
+  </InputGroups>
+</Playground>
+
+## Icons
+
+```js
+import { IconSearch } from '@peru-com/ui';
+```
+
+<Playground>
+  <Input 
+    name="name" 
+    placeholder="Enter your lastname..."
+    icon={<IconSearch color="#F52118" />}
+  />
+</Playground>
+
+## Icons events click
+
+```js
+import { IconSearch } from '@peru-com/ui';
+```
+
+<Playground>
+  <Input 
+    name="name" 
+    placeholder="Enter your lastname..."
+    icon={<IconSearch color="#F52118" />}
+    iconClick={(value) => console.log(value, '<- value with click')}
+  />
+</Playground>
+
+
+## Props
+
+<Props of={Input} />

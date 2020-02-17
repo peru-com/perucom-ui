@@ -1,45 +1,47 @@
-export const COLORS = {
+import { COLORS } from './../../ui';
+
+export const VARIANTS_COLORS = {
   default: {
-    background: '#FFFFFF',
-    border: '#D8DDE1',
-    hover: '#D8DDE1',
-    text: '#5B656E'
+    background: COLORS.WHITE,
+    border: COLORS.DEFAULT,
+    hover: COLORS.DEFAULT,
+    text: COLORS.SECONDARY
   },
   primary: {
-    background: '#F31106',
-    border: '#F31106',
-    hover: '#E30800',
-    text: '#FFFFFF',
+    background: COLORS.PRIMARY,
+    border: COLORS.PRIMARY,
+    hover: COLORS.PRIMARY400,
+    text: COLORS.WHITE,
   },
   secondary: {
-    background: '#5B656E',
-    border: '#5B656E',
-    hover: '#495158',
-    text: '#FFFFFF'
+    background: COLORS.SECONDARY,
+    border: COLORS.SECONDARY,
+    hover: COLORS.SECONDARY400,
+    text: COLORS.WHITE
   },
   info: {
-    background: '#007BFF',
-    border: '#007BFF',
-    hover: '#0060C7',
-    text: '#FFFFFF',
+    background: COLORS.INFO,
+    border: COLORS.INFO,
+    hover: COLORS.INFO400,
+    text: COLORS.WHITE,
   },
   success: {
-    background: '#28A745',
-    border: '#28A745',
-    hover: '#1F7D35',
-    text: '#FFFFFF'
+    background: COLORS.SUCCESS,
+    border: COLORS.SUCCESS,
+    hover: COLORS.SUCCESS500,
+    text: COLORS.WHITE
   },
   danger: {
-    background: '#DC3545',
-    border: '#DC3545',
-    hover: '#B92C39',
-    text: '#FFFFFF'
+    background: COLORS.DANGER,
+    border: COLORS.DANGER,
+    hover: COLORS.DANGER500,
+    text: COLORS.WHITE
   },
   warning: {
-    background: '#F2A227',
-    border: '#F2A227',
-    hover: '#D08B21',
-    text: '#000000'
+    background: COLORS.WARNING,
+    border: COLORS.WARNING,
+    hover: COLORS.WARNING400,
+    text: COLORS.BLACK
   }
 };
 
