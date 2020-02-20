@@ -29,7 +29,7 @@ export const ButtonStyled = styled.button`
   flex-direction: ${(props: Props) => props.iconPos
     && POSITION[props.iconPos]};
   border: none;
-  padding: 0 20px;
+  padding: 0 16px;
   border-radius: 6px;
   cursor: pointer;
   outline: none;

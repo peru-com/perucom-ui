@@ -1,0 +1,38 @@
+---
+status: development
+menu: Components
+---
+
+import { Header } from '../src/components/Header';
+
+# Header
+
+```js
+import { Header } from '@peru-com/ui';
+```
+## Basic usage
+
+<Playground>
+  <Header
+    isDarkMode
+    items={[
+      {
+        text: 'Turismo',
+        isSelected: true,
+        onClick: () => window.location.replace('https://peru.com/viajes')
+      },
+      {
+        text: 'Gastronomía',
+        onClick: () => window.location.replace('https://peru.com/estilo-de-vida/gastronomia')
+      },
+      {
+        text: 'Actualidad',
+        onClick: () => window.location.replace('https://peru.com/actualidad')
+      }
+    ]}
+  />
+</Playground>
+
+## Props
+
+<Props of={Header} />

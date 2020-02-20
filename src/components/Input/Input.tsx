@@ -52,7 +52,7 @@ export const Input: React.FC<Props> = ({
   };
 
   const handleClickIcon = () => {
-    iconClick && iconClick(value);
+    iconClick && iconClick(val);
   };
 
   if(icon) {
