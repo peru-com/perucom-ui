@@ -61,3 +61,8 @@ export const SIZES = {
   medium: '1.25rem',
   large: '1.5rem'
 };
+
+export const POSITION = {
+  left: 'row-reverse',
+  right: 'row'
+};

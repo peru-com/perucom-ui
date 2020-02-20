@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ButtonStyled, Loading } from './styled';
+import {
+  ButtonStyled, 
+  Loading,
+  IconWrapper
+} from './styled';
 
 interface Props {
   width?: number;
@@ -11,6 +15,8 @@ interface Props {
   size?: string;
   variant?: string;
   onClick?: Function;
+  icon?: React.ReactNode;
+  iconPos?: string;
   children?: any;
 }
 
@@ -23,6 +29,8 @@ export const Button: React.FC<Props> = ({
   size,
   variant,
   onClick,
+  icon,
+  iconPos,
   children
 }) => {
 
@@ -50,8 +58,10 @@ export const Button: React.FC<Props> = ({
       isDisabled={isDisabled}
       isOutlined={isOutlined}
       onClick={onClick}
+      iconPos={iconPos}
     >
       {children}
+      {icon && icon}
     </ButtonStyled>
   );
 };
@@ -78,6 +88,8 @@ Button.propTypes = {
     'warning'
   ]),
   onClick: PropTypes.func,
+  icon: PropTypes.node,
+  iconPos: PropTypes.string,
   children: PropTypes.any
 };
 

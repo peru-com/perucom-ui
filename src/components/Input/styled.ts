@@ -14,7 +14,6 @@ export const Wrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   position: relative;
-  z-index: 0;
   width: ${(props: Props) => props.fullWidth && '100%'};
   width: ${(props: Props) => props.width && `${props.width}px`};
 `;
@@ -52,7 +51,7 @@ export const InputGroups = styled.div`
   flex-wrap: wrap;
   align-items: center;
 
-  div{
+  ${Wrapper} {
     margin: 8px;
   }
 `;

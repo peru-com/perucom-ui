@@ -1,9 +1,10 @@
 ---
-status: development
+status: ready
 menu: Components
 ---
 
 import { Button, ButtonGroups } from '../src/components/Button';
+import { IconAirplane } from '../src/icons';
 
 # Button
 
@@ -124,6 +125,57 @@ Do action on event, use ***onClick*** prop.
 
 <Playground>
   <Button onClick={() => console.log('Click')}>Default</Button>
+</Playground>
+
+## Icons
+
+```js
+import { IconAirplane } from '@peru-com/ui';
+```
+
+<Playground>
+  <ButtonGroups>
+    <Button 
+      variant="primary"
+      icon={<IconAirplane />}
+      isOutlined
+    >
+      PRIMARY
+    </Button>
+    <Button 
+      variant="primary"
+      icon={<IconAirplane />}
+    >
+      PRIMARY OUTLINED
+    </Button>
+  </ButtonGroups>
+</Playground>
+
+## Icons position
+
+Set your icon position, use ***iconPos*** prop.
+
+```js
+import { IconAirplane } from '@peru-com/ui';
+```
+
+<Playground>
+  <ButtonGroups>
+    <Button 
+      variant="primary"
+      icon={<IconAirplane />}
+      iconPos="left"
+    >
+      PRIMARY LEFT
+    </Button>
+    <Button 
+      variant="primary"
+      icon={<IconAirplane />}
+      iconPos="right"
+    >
+      PRIMARY RIGHT
+    </Button>
+  </ButtonGroups>
 </Playground>
 
 ## Props

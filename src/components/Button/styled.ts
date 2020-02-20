@@ -1,5 +1,5 @@
 import styled, { css, keyframes  } from 'styled-components';
-import { SIZES, VARIANTS_COLORS, VARIANTS } from './constants';
+import { SIZES, VARIANTS_COLORS, VARIANTS, POSITION } from './constants';
 
 interface Props {
   width?: number;
@@ -9,6 +9,7 @@ interface Props {
   isOutlined?: boolean;
   size?: string;
   variant?: string;
+  iconPos?: string;
 }
 
 export const ButtonGroups = styled.div`
@@ -25,8 +26,10 @@ export const ButtonStyled = styled.button`
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  flex-direction: ${(props: Props) => props.iconPos
+    && POSITION[props.iconPos]};
   border: none;
-  padding: 0 25px;
+  padding: 0 20px;
   border-radius: 6px;
   cursor: pointer;
   outline: none;
@@ -46,6 +49,13 @@ export const ButtonStyled = styled.button`
       background-color: ${VARIANTS_COLORS[props.variant].hover};
       transition: linear .4s;
     }
+
+    svg {
+      margin: 0 5px;
+      path {
+        fill: ${VARIANTS_COLORS[props.variant].text};
+      }
+    }
   `}
 
   ${(props: Props) => (VARIANTS.includes(props.variant) && props.isOutlined) && css`
@@ -53,11 +63,25 @@ export const ButtonStyled = styled.button`
     border: 1px solid ${VARIANTS_COLORS[props.variant].border};
     color: ${VARIANTS_COLORS[props.variant].background};
 
+    svg {
+      margin: 0 5px;
+      path {
+        fill: ${VARIANTS_COLORS[props.variant].background};
+      }
+    }
+
     &:hover {
       background-color: ${VARIANTS_COLORS[props.variant].background};
       border: 1px solid ${VARIANTS_COLORS[props.variant].border};
       color: ${VARIANTS_COLORS[props.variant].text};
       transition: linear .4s;
+
+      svg {
+        margin: 0 5px;
+        path {
+          fill: ${VARIANTS_COLORS[props.variant].text};
+        }
+      }
     }
   `}
 
@@ -91,6 +115,10 @@ export const Loading = styled.div`
     border: 2px solid ${VARIANTS_COLORS[props.variant].text};
     border-top: 2px solid ${VARIANTS_COLORS[props.variant].background};
   `}
+`;
+
+export const IconWrapper = styled.div`
+  margin: 0 5px;
 `;
 
 ButtonGroups.displayName = 'ButtonGroups';

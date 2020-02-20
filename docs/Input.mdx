@@ -1,5 +1,5 @@
 ---
-status: development
+status: ready
 menu: Components
 ---
 
@@ -115,6 +115,30 @@ import { IconSearch } from '@peru-com/ui';
   />
 </Playground>
 
+## Icons position
+
+Set your icon position, use ***iconPos*** prop.
+
+```js
+import { IconSearch } from '@peru-com/ui';
+```
+
+<Playground>
+  <InputGroups>
+    <Input 
+      name="name" 
+      placeholder="Enter your lastname..."
+      icon={<IconSearch color="#F52118" />}
+      iconPos="left"
+    />
+    <Input 
+      name="name" 
+      placeholder="Enter your lastname..."
+      icon={<IconSearch color="#F52118" />}
+      iconPos="right"
+    />
+  </InputGroups>
+</Playground>
 
 ## Props
 

@@ -51,6 +51,10 @@ export const Input: React.FC<Props> = ({
     if(e.key === 'Enter') onKeyDown && onKeyDown(value);
   };
 
+  const handleClickIcon = () => {
+    iconClick && iconClick(value);
+  };
+
   if(icon) {
     return(
       <Wrapper width={width} fullWidth={fullWidth}>
@@ -66,7 +70,7 @@ export const Input: React.FC<Props> = ({
         />
         <IconWrapper 
           iconPos={iconPos} 
-          onClick={() => iconClick(val)}
+          onClick={handleClickIcon}
         >
           {icon}
         </IconWrapper>
