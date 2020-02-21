@@ -1,0 +1,83 @@
+---
+status: development
+menu: Components
+---
+
+import { BannerDemo, items } from '../demos/Banner';
+import { Banner, BannerItem } from '../src/components/Banner';   
+
+# Banner
+
+```js
+import { Banner } from '@peru-com/ui';
+```
+## Basic usage
+
+```jsx
+const items = [
+  {
+    renderComponent: <Description />,
+    image: 'http://placeimg.com/640/480/animals',
+    link: 'https://peru.com/viajes/conozca-peru/arequipa-conoce-cual-mejor-epoca-visitarla-noticia-289406'
+  },
+  {
+    renderComponent: <Description />,
+    image: 'http://placeimg.com/1000/500/arch',
+    link: 'https://peru.com/viajes/conozca-peru/arequipa-conoce-cual-mejor-epoca-visitarla-noticia-289406'
+  },
+  {
+    renderComponent: <Description />,
+    image: 'http://placeimg.com/1000/500/nature',
+    link: 'https://peru.com/viajes/conozca-peru/arequipa-conoce-cual-mejor-epoca-visitarla-noticia-289406'
+  }
+];
+```
+
+<Playground>
+  <Banner>
+    {items.map((item, index) => 
+      <BannerItem key={index} item={item} />)}
+  </Banner>
+</Playground>
+
+## Display
+
+To take full width of the parent element, use ***width*** prop.
+
+```jsx
+const BannerDemo: React.FC = () => {
+  const wrapperRef = useRef();
+  const [ width, setWidth ] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return() => window.removeEventListener('resize', handleResize);
+  })
+
+  const handleResize = () => {
+    wrapperRef.current && setWidth(wrapperRef.current.clientWidth);
+  };
+
+  useEffect(() => {
+    wrapperRef.current && setWidth(wrapperRef.current.clientWidth);
+  }, [wrapperRef]);
+
+  return(
+    <div style={{ width: '100%' }} ref={wrapperRef}>
+      {wrapperRef.current && (
+        <Banner width={`${width}px`}>
+          {items.map((item, index) => 
+            <BannerItem key={index} item={item} />)}
+        </Banner>)}
+    </div>
+  );
+};
+```
+
+<Playground>
+  <BannerDemo />
+</Playground>
+
+## Props
+
+<Props of={Banner} />
