@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   width: 100%;
   max-width: 360px;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -78,6 +78,7 @@ export const ItemWrapper = styled.li`
   cursor: pointer;
   padding: 18px;
   box-sizing: border-box;
+  min-height: 30px;
 
   &:hover {
     ${BarSelected} {

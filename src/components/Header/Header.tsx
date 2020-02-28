@@ -17,6 +17,7 @@ import { Button } from '../Button';
 import { InputSearch } from '../InputSearch';
 import { IconAirplane, IconMenu } from '../../icons';
 import { COLORS } from '../../ui';
+import { useToggle } from './hooks';
 
 interface Props {
   items?: any;
@@ -24,7 +25,7 @@ interface Props {
 }
 
 export const Header: React.FC<Props> = ({ items, isDarkMode }) => {
-  const [ isOpen, setIsOpen ] = useState(false); 
+  const toggle = useToggle();
 
   const handleClickHome = () => {
     window.location.replace('https://peru.com');
@@ -42,16 +43,20 @@ export const Header: React.FC<Props> = ({ items, isDarkMode }) => {
     <>
       <Menu
         items={items}
-        isOpen={isOpen} 
-        setIsOpen={() => setIsOpen(false)}
+        isOpen={toggle.isOpen} 
+        setIsOpen={toggle.onClick}
         onClickLogo={handleClickHome}
         onSearch={(value) => searchByInputValue(value)}
         onClickButton={handleClickButton}
       />
       <Wrapper isDarkMode={isDarkMode}>
         <Main>
-          <Toogle onClick={() => setIsOpen(true)}>
-            <IconMenu color={COLORS.PRIMARY} />
+          <Toogle onClick={toggle.onClick}>
+            <IconMenu color={
+              isDarkMode 
+              ? COLORS.PRIMARY 
+              : COLORS.WHITE}
+            />
           </Toogle>
           <Logo onClick={handleClickHome}>
             <svg
@@ -104,7 +109,7 @@ export const Header: React.FC<Props> = ({ items, isDarkMode }) => {
           </ButtonWrapper>
         </NavBar>
       </Wrapper>
-      { isOpen && <Overlay onClick={() => setIsOpen(false)} /> }
+      { toggle.isOpen && <Overlay onClick={toggle.onClick} /> }
     </>
   );
 };

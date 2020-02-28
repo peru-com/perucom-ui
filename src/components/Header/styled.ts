@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   top: 0;
   z-index: 1;
   background-color: ${(props: Props) => props.isDarkMode && COLORS.WHITE};
+  margin: 0 auto;
 
   ${(props: Props) => props.isDarkMode && css`
     ${ItemWrapper} {
@@ -94,6 +95,9 @@ export const IconWrapper = styled.div`
   position: absolute;
   right: 15px;
   border-radius: 50%;
+  background-color: ${COLORS.WHITE};
+  padding: 8px;
+  box-sizing: border-box;
 
   svg path {
     stroke: ${COLORS.PRIMARY};
