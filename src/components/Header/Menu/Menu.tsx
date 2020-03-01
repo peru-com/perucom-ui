@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Wrapper,
   MenuStyled,
@@ -17,9 +18,14 @@ import { COLORS } from './../../../ui';
 
 interface Props {
   items?: any;
+  isOpen?: boolean;
+  setIsOpen?: Function;
+  onClickLogo?: Function;
+  onSearch?: Function;
+  onClickButton?: Function;
 }
 
-export const Menu = ({ 
+export const Menu: React.FC<Props> = ({ 
   items,
   isOpen,
   setIsOpen,
@@ -81,3 +87,14 @@ export const Menu = ({
     </Wrapper>
   );
 };
+
+Menu.propTypes = {
+  items: PropTypes.any,
+  isOpen: PropTypes.bool,
+  setIsOpen: PropTypes.func,
+  onClickLogo: PropTypes.func,
+  onSearch: PropTypes.func,
+  onClickButton: PropTypes.func
+};
+
+Menu.displayName = 'Menu';

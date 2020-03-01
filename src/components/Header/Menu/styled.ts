@@ -98,3 +98,13 @@ export const ButtonWrapper = styled.div`
   padding: 8px 0;
   box-sizing: border-box;
 `;
+
+Wrapper.displayName = 'Wrapper';
+MenuStyled.displayName = 'MenuStyled';
+Header.displayName = 'Header';
+IconWrapper.displayName = 'IconWrapper';
+Logo.displayName = 'Logo';
+Search.displayName = 'Search';
+BarSelected.displayName = 'BarSelected';
+ItemWrapper.displayName = 'ItemWrapper';
+ButtonWrapper.displayName = 'ButtonWrapper';

@@ -7,7 +7,9 @@ export const useToggle = () => {
 
   useEffect(() => {
     const contentBody = document.getElementsByTagName('body')[0];
-    isOpen ? (contentBody.style.overflow = locked) : (contentBody.style.overflow = unlocked);
+    isOpen 
+      ? (contentBody.style.overflow = locked) 
+      : (contentBody.style.overflow = unlocked);
   }, [isOpen]);
 
   return {

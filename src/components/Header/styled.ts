@@ -2,23 +2,74 @@ import styled, { css } from 'styled-components';
 import { COLORS } from './../../ui';
 
 interface Props {
+  isFixed?: boolean;
   isDarkMode?: boolean;
   isSelected?: boolean;
 }
 
 export const Wrapper = styled.div`
+  width: 100%;
+  position: ${(props) => props.isFixed 
+    ? 'fixed'
+    : 'sticky'};
+  background-color: ${(props) => props.isDarkMode 
+    && 'transparent'};
+`;
+
+export const BarSelected = styled.div`
+  display: none;
+  margin: 0 auto;
+  width: 85%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: red;
+`;
+
+export const ItemWrapper = styled.li`
+  display: none;
+  list-style: none;
+  margin: 0 15px;
+  cursor: pointer;
+  min-height: 24px;
+  color: ${COLORS.WHITE};
+
+  &:hover {
+    ${BarSelected} {
+      display: block;
+    }
+  }
+
+  ${(props: Props) => props.isSelected && css`
+    ${BarSelected} {
+      display: block;
+    }
+  `}
+
+  @media(min-width: 960px) {
+    display: inline-block;
+  } 
+`;
+
+export const HeaderStyled = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 1600px;
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: ${(props: Props) => props.isDarkMode && COLORS.WHITE};
   margin: 0 auto;
+  background-color: ${COLORS.WHITE};
+
+  ${ItemWrapper} {
+    color: ${COLORS.TEXT};
+  }
+
+  background-color: ${(props: Props) => props.isDarkMode 
+    && 'transparent'};
 
   ${(props: Props) => props.isDarkMode && css`
     ${ItemWrapper} {
-      color: ${COLORS.TEXT};
+      color: ${COLORS.WHITE};
     }
   `}
 `;
@@ -121,37 +172,15 @@ export const NavBar = styled.ul`
   }
 `;
 
-export const BarSelected = styled.div`
-  display: none;
-  margin: 0 auto;
-  width: 85%;
-  height: 2px;
-  border-radius: 4px;
-  background-color: red;
-`;
-
-export const ItemWrapper = styled.li`
-  display: none;
-  list-style: none;
-  margin: 0 15px;
-  cursor: pointer;
-  min-height: 24px;
-  color: ${COLORS.WHITE};
-
-  &:hover {
-    ${BarSelected} {
-      display: block;
-    }
-  }
-
-  ${(props: Props) => props.isSelected && css`
-    ${BarSelected} {
-      display: block;
-    }
-  `}
-
-  @media(min-width: 960px) {
-    display: inline-block;
-  } 
-`;
-
+Wrapper.displayName = 'Wrapper';
+BarSelected.displayName = 'BarSelected';
+ItemWrapper.displayName = 'ItemWrapper';
+HeaderStyled.displayName = 'HeaderStyled';
+Toogle.displayName = 'Toogle';
+SearchWrapper.displayName = 'SearchWrapper';
+Main.displayName = 'Main';
+Logo.displayName = 'Logo';
+Overlay.displayName = 'Overlay';
+ButtonWrapper.displayName = 'ButtonWrapper';
+IconWrapper.displayName = 'IconWrapper';
+NavBar.displayName = 'NavBar';
