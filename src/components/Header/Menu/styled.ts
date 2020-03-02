@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 import { COLORS } from './../../../ui';
 
+interface Props {
+  isOpen?: boolean;
+  isSelected?: boolean;
+}
+
 export const Wrapper = styled.div`
   width: 100%;
   max-width: 360px;
@@ -13,7 +18,7 @@ export const Wrapper = styled.div`
   transition: .2s linear;
   transform: translateX(-100%);
 
-  ${(props) => props.isOpen && css`
+  ${(props: Props) => props.isOpen && css`
     transform: translateX(0px);
   `}
 
@@ -29,6 +34,7 @@ export const MenuStyled = styled.ul`
   height: 100%;
   background-color: ${COLORS.WHITE};
   font-size: 20px;
+  overflow-y: auto;
 `;
 
 export const Header = styled.div`
@@ -40,6 +46,9 @@ export const Header = styled.div`
   border-bottom: 1px solid ${COLORS.DEFAULT};
   padding: 10px 15px;
   box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  background-color: ${COLORS.WHITE};
 `;
 
 export const IconWrapper = styled.div`
@@ -78,7 +87,7 @@ export const ItemWrapper = styled.li`
   cursor: pointer;
   padding: 18px;
   box-sizing: border-box;
-  min-height: 30px;
+  min-height: 62px;
 
   &:hover {
     ${BarSelected} {
@@ -86,7 +95,7 @@ export const ItemWrapper = styled.li`
     }
   }
 
-  ${(props) => props.isSelected && css`
+  ${(props: Props) => props.isSelected && css`
     ${BarSelected} {
       display: block;
     }

@@ -1,6 +1,6 @@
 {
   "name": "@peru-com/ui",
-  "version": "0.3.0-alpha.5",
+  "version": "0.3.0",
   "description": "Perucom UI is a library of components made in ReactJS",
   "main": "dist/index.js",
   "scripts": {

@@ -9,10 +9,12 @@ interface Props {
 
 export const Wrapper = styled.div`
   width: 100%;
-  position: ${(props) => props.isFixed 
+  box-shadow: ${(props: Props) => props.isDarkMode 
+    && '0px 1px 6px rgba(0, 0, 0, 0.21)'};
+  position: ${(props: Props) => props.isFixed 
     ? 'fixed'
     : 'sticky'};
-  background-color: ${(props) => props.isDarkMode 
+  background-color: ${(props: Props) => props.isDarkMode 
     ? 'transparent'
     : `${COLORS.WHITE}`};
 `;
