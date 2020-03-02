@@ -13,7 +13,8 @@ export const Wrapper = styled.div`
     ? 'fixed'
     : 'sticky'};
   background-color: ${(props) => props.isDarkMode 
-    && 'transparent'};
+    ? 'transparent'
+    : `${COLORS.WHITE}`};
 `;
 
 export const BarSelected = styled.div`
