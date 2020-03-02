@@ -48,6 +48,7 @@ export const Header = styled.div`
   box-sizing: border-box;
   position: sticky;
   top: 0;
+  z-index: 1;
   background-color: ${COLORS.WHITE};
 `;
 
