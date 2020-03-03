@@ -33,6 +33,8 @@ export const Menu: React.FC<Props> = ({
   onSearch,
   onClickButton
 }) => {
+  const ROOT = 'menu';
+
   return(
     <Wrapper isOpen={isOpen}>
       <MenuStyled>
@@ -40,7 +42,9 @@ export const Menu: React.FC<Props> = ({
           <IconWrapper onClick={() => setIsOpen(false)}>
             <IconClose color={COLORS.PRIMARY} />
           </IconWrapper>
-          <Logo onClick={onClickLogo}>
+          <Logo
+            data-id={`${ROOT}-logo-top`}
+            onClick={onClickLogo}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="118"
@@ -56,30 +60,28 @@ export const Menu: React.FC<Props> = ({
           </Logo>
         </Header>
         <Search>
-          <InputSearch 
-            name="search" 
+          <InputSearch
+            name="search"
             onSearch={(value) => onSearch(value)}
-            fullWidth 
-          />
+            fullWidth />
         </Search>
         { items && items.map((item, index) => (
-          <ItemWrapper 
-            key={index} 
-            isSelected={item.isSelected} 
-            onClick={item.onClick}
-          >
+          <ItemWrapper
+            key={index}
+            data-id={`${ROOT}-item-${index}`}
+            isSelected={item.isSelected}
+            onClick={item.onClick}>
             <div>
               <span>{item.text}</span>
               <BarSelected />
             </div>
           </ItemWrapper>)) }
-        <ButtonWrapper>
-          <Button 
+        <ButtonWrapper data-id={`${ROOT}-btn`}>
+          <Button
             variant="primary"
             icon={<IconAirplane />}
             iconPos="left"
-            onClick={onClickButton}
-          >
+            onClick={onClickButton}>
             COMPRAR PAQUETES
           </Button>
         </ButtonWrapper>

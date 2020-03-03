@@ -32,6 +32,7 @@ export const Header: React.FC<Props> = ({
   isFixed,
   isDarkMode
 }) => {
+  const ROOT = 'header';
   const toggle = useToggle();
 
   const handleClickHome = () => {
@@ -39,7 +40,8 @@ export const Header: React.FC<Props> = ({
   };
 
   const searchByInputValue = (value: string) => {
-    window.location.replace(`http://peru.buscamas.pe/${value}`);
+    const isNotEmpty = !!value;
+    isNotEmpty && window.location.replace(`http://peru.buscamas.pe/${value}`);
   };
 
   const handleClickButton = () => {
@@ -53,22 +55,22 @@ export const Header: React.FC<Props> = ({
     >
       <Menu
         items={items}
-        isOpen={toggle.isOpen} 
+        isOpen={toggle.isOpen}
         setIsOpen={toggle.onClick}
         onClickLogo={handleClickHome}
         onSearch={(value) => searchByInputValue(value)}
-        onClickButton={handleClickButton}
-      />
+        onClickButton={handleClickButton} />
       <HeaderStyled isDarkMode={isDarkMode}>
         <Main>
           <Toogle onClick={toggle.onClick}>
             <IconMenu color={
               isDarkMode 
               ? COLORS.WHITE 
-              : COLORS.PRIMARY}
-            />
+              : COLORS.PRIMARY} />
           </Toogle>
-          <Logo onClick={handleClickHome}>
+          <Logo
+            data-id={`${ROOT}-logo-top`}
+            onClick={handleClickHome}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="118"
@@ -87,33 +89,36 @@ export const Header: React.FC<Props> = ({
           </Logo>
           <SearchWrapper>
             <InputSearch 
-              name="search" 
+              name="search"
               onSearch={(value) => searchByInputValue(value)}
-              fullWidth 
-            />
+              fullWidth />
           </SearchWrapper>
-          <IconWrapper onClick={handleClickButton}>
-            <IconAirplane color={COLORS.PRIMARY} width="25" height="25"/>
+          <IconWrapper
+            data-id={`${ROOT}-btn-responsive`}
+            onClick={handleClickButton}>
+            <IconAirplane 
+              color={COLORS.PRIMARY}
+              width="25"
+              height="25" />
           </IconWrapper>
         </Main>
         <NavBar>
           { items 
             && items.map((item, index) => (
-              <ItemWrapper 
-                key={index} 
-                isSelected={item.isSelected} 
-                onClick={item.onClick}
-              >
+              <ItemWrapper
+                key={index}
+                data-id={`${ROOT}-nav-item-${index}`}
+                isSelected={item.isSelected}
+                onClick={item.onClick}>
                 <span>{item.text}</span>
                 <BarSelected />
               </ItemWrapper>)) }
-          <ButtonWrapper>
-            <Button 
+          <ButtonWrapper data-id={`${ROOT}-btn-desktop`}>
+            <Button
               variant="primary"
               icon={<IconAirplane />}
               iconPos="left"
-              onClick={handleClickButton}
-            >
+              onClick={handleClickButton}>
               COMPRAR PAQUETES
             </Button>
           </ButtonWrapper>
