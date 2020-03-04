@@ -1,11 +1,24 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { COLORS } from './../../ui';
+import { MainWrapper } from './Main';
+import { NavBarWrapper } from './NavBar';
 
 interface Props {
   isFixed?: boolean;
   isDarkMode?: boolean;
   isSelected?: boolean;
 }
+
+export const HeaderContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 1600px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0 auto;
+`;
+
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -17,107 +30,24 @@ export const Wrapper = styled.div`
   background-color: ${(props: Props) => props.isDarkMode 
     ? 'transparent'
     : `${COLORS.WHITE}`};
-`;
 
-export const BarSelected = styled.div`
-  display: none;
-  margin: 0 auto;
-  width: 85%;
-  height: 2px;
-  border-radius: 4px;
-  background-color: red;
-`;
-
-export const ItemWrapper = styled.li`
-  display: none;
-  list-style: none;
-  margin: 0 15px;
-  cursor: pointer;
-  min-height: 24px;
-  color: ${COLORS.WHITE};
-
-  &:hover {
-    ${BarSelected} {
-      display: block;
-    }
+  ${HeaderContent} {
+    background-color: ${(props: Props) => props.isDarkMode 
+      ? 'transparent'
+      : `${COLORS.WHITE}`};
   }
 
-  ${(props: Props) => props.isSelected && css`
-    ${BarSelected} {
-      display: block;
-    }
-  `}
-
-  @media(min-width: 960px) {
-    display: inline-block;
-  } 
-`;
-
-export const HeaderStyled = styled.div`
-  display: flex;
-  justify-content: space-between;
-  max-width: 1600px;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  margin: 0 auto;
-  background-color: ${COLORS.WHITE};
-
-  ${ItemWrapper} {
-    color: ${COLORS.TEXT};
+  ${MainWrapper} {
+    background-color: ${(props: Props) => props.isDarkMode 
+      ? 'transparent'
+      : `${COLORS.WHITE}`};
   }
 
-  background-color: ${(props: Props) => props.isDarkMode 
-    && 'transparent'};
-
-  ${(props: Props) => props.isDarkMode && css`
-    ${ItemWrapper} {
-      color: ${COLORS.WHITE};
-    }
-  `}
-`;
-
-export const Toogle = styled.div`
-  position: absolute;
-  left: 15px;
-
-  @media(min-width: 960px) {
-    display: none;
+  ${NavBarWrapper} {
+    color: ${(props: Props) => props.isDarkMode 
+      ? `${COLORS.WHITE}`
+      : `${COLORS.TEXT}`};
   }
-`;
-
-export const SearchWrapper = styled.div`
-  display: none;
-
-  @media(min-width: 960px) {
-    display: block;
-  }
-`;
-
-export const Main = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 15px;
-  box-sizing: border-box;
-
-  @media(min-width: 768px) {
-    width: 35%;
-  }
-
-  @media(min-width: 960px) {
-    width: auto;
-    justify-content: flex-start;
-  }
-`;
-
-export const Logo = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-right: 15px;
-  cursor: pointer;
 `;
 
 export const Overlay = styled.div`
@@ -137,53 +67,6 @@ export const Overlay = styled.div`
   } 
 `;
 
-export const ButtonWrapper = styled.div`
-  display: none;
-  
-  @media(min-width: 768px) {
-    display: block;
-  } 
-`;
-
-export const IconWrapper = styled.div`
-  position: absolute;
-  right: 15px;
-  border-radius: 50%;
-  background-color: ${COLORS.WHITE};
-  padding: 8px;
-  box-sizing: border-box;
-
-  svg path {
-    stroke: ${COLORS.PRIMARY};
-    stroke-width: 0.4;
-  }
-
-  @media(min-width: 768px) {
-    display: none;
-  } 
-`;
-
-export const NavBar = styled.ul`
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-
-  @media(min-width: 768px) {
-    padding: 10px 15px;
-  }
-`;
-
 Wrapper.displayName = 'Wrapper';
-BarSelected.displayName = 'BarSelected';
-ItemWrapper.displayName = 'ItemWrapper';
-HeaderStyled.displayName = 'HeaderStyled';
-Toogle.displayName = 'Toogle';
-SearchWrapper.displayName = 'SearchWrapper';
-Main.displayName = 'Main';
-Logo.displayName = 'Logo';
+HeaderContent.displayName = 'HeaderContent';
 Overlay.displayName = 'Overlay';
-ButtonWrapper.displayName = 'ButtonWrapper';
-IconWrapper.displayName = 'IconWrapper';
-NavBar.displayName = 'NavBar';
