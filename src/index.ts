@@ -1,6 +1,6 @@
 export { Button } from './components/Button';
 export { Input } from './components/Input';
-export { Header } from './components/Header';
+export { Header, HeaderContent, Main, Menu, NavBar, Overlay, useToggle } from './components/Header';
 
 export {
   IconSearch,

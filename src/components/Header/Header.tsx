@@ -11,7 +11,7 @@ import { NavBar } from './NavBar';
 import { useToggle } from './hooks';
 
 interface Props {
-  items: any;
+  items?: any;
   isDarkMode?: boolean;
   isFixed?: boolean;
   children?: any;
@@ -77,7 +77,7 @@ export const Header: React.FC<Props> = ({
 };
 
 Header.propTypes = {
-  items: PropTypes.any.isRequired,
+  items: PropTypes.any,
   isFixed: PropTypes.bool,
   isDarkMode: PropTypes.bool,
   children: PropTypes.any
