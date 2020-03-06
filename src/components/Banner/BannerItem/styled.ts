@@ -28,17 +28,22 @@ export const Img = styled.img`
   object-position: center center;
 `;
 
-export const Content = styled.div`
-  color: ${COLORS.WHITE};
+export const Description = styled.div`
+  width: 100%;
   position: absolute;
-  max-width: 1600px;
+  bottom: 0;
   padding: 0 20px 70px;
   box-sizing: border-box;
-  margin: 0 auto;
+  color: ${COLORS.WHITE};
 
   @media(min-width: 768px) {
     padding: 0 70px 70px;
   }
+`;
+
+export const Content = styled.div`
+  max-width: 1600px;
+  margin: 0 auto;
 `;
 
 export const Category = styled.div`

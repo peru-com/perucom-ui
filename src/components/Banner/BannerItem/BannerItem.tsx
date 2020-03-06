@@ -4,6 +4,7 @@ import {
   Item,
   Link,
   Img,
+  Description,
   Content,
   Category,
   Title,
@@ -37,12 +38,15 @@ export const BannerItem: React.FC<Props> = ({ item }) => (
           ${item.image.sizes.laptop} 960w,
           ${item.image.sizes.desktop} 1024w`}
         alt={item.image.description} />
+      <Description>
+        <Content>
+          <Category>{item.category}</Category>
+          <Title>{item.title}</Title>
+          <PublicationDate>{item.date}</PublicationDate>
+        </Content>
+      </Description>
     </Link>
-    <Content>
-      <Category>{item.category}</Category>
-      <Title>{item.title}</Title>
-      <PublicationDate>{item.date}</PublicationDate>
-    </Content>
+
   </Item>
 );
 

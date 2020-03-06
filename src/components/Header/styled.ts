@@ -22,6 +22,7 @@ export const HeaderContent = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
+  z-index: 1000;
   box-shadow: ${(props: Props) => !props.isDarkMode 
     && '0px 1px 6px rgba(0, 0, 0, 0.21)'};
   position: ${(props: Props) => props.isFixed 
