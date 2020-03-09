@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { COLORS } from './../../../ui';
 
-interface Props {
-  image?: string;
-}
-
 export const Item = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -72,3 +68,20 @@ export const PublicationDate = styled.div`
     font-size: 16px;
   }
 `;
+
+export const Overlay = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.45) 100%);
+`;
+
+Item.displayName = 'Item';
+Link.displayName = 'Link';
+Img.displayName = 'Img';
+Description.displayName = 'Description';
+Content.displayName = 'Content';
+Category.displayName = 'Category';
+Title.displayName = 'Title';
+PublicationDate.displayName = 'PublicationDate';
+Overlay.displayName = 'Overlay';

@@ -8,7 +8,8 @@ import {
   Content,
   Category,
   Title,
-  PublicationDate
+  PublicationDate,
+  Overlay
 } from './styled';
 
 interface Image {
@@ -38,6 +39,7 @@ export const BannerItem: React.FC<Props> = ({ item }) => (
           ${item.image.sizes.laptop} 960w,
           ${item.image.sizes.desktop} 1024w`}
         alt={item.image.description} />
+      <Overlay />
       <Description>
         <Content>
           <Category>{item.category}</Category>
