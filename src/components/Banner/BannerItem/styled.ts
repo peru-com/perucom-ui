@@ -45,6 +45,7 @@ export const Content = styled.div`
 export const Category = styled.div`
   font-family: montserrat-regular;
   font-size: 16px;
+  text-transform: uppercase;
 
   @media(min-width: 768px) {
     font-size: 24px;
