@@ -1,0 +1,79 @@
+---
+status: development
+menu: Components
+name: CardNote
+---
+
+import { CardNote } from '../src/components/CardNote';
+import { CardNoteGroup } from '../demos/CardNote';
+
+# CardNote
+
+```js
+import { CardNote } from '@peru-com/ui';
+```
+## Basic usage
+
+<Playground>
+  <CardNoteGroup>
+    <CardNote 
+      image={{
+        desktop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/924x530/uruguay.jpg',
+        laptop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/624x468/uruguay.jpg',
+        tablet: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/513x287/uruguay.jpg',
+        mobile: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/246x138/uruguay.jpg'
+      }}
+      category="Conozca Perú"
+      date="01 de Ene. 2020"
+      description="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya" />
+  </CardNoteGroup>
+</Playground>
+
+## Card Group
+
+```jsx
+const CardNoteGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+`;
+```
+
+<Playground>
+  <CardNoteGroup>
+    <CardNote 
+      image={{
+        desktop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/924x530/uruguay.jpg',
+        laptop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/624x468/uruguay.jpg',
+        tablet: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/513x287/uruguay.jpg',
+        mobile: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/246x138/uruguay.jpg'
+      }}
+      category="Conozca Perú"
+      date="01 de Ene. 2020"
+      description="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya" />
+    <CardNote 
+      image={{
+        desktop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/924x530/uruguay.jpg',
+        laptop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/624x468/uruguay.jpg',
+        tablet: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/513x287/uruguay.jpg',
+        mobile: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/246x138/uruguay.jpg'
+      }}
+      category="Conozca Perú"
+      date="01 de Ene. 2020"
+      description="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya" />
+    <CardNote 
+      image={{
+        desktop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/924x530/uruguay.jpg',
+        laptop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/624x468/uruguay.jpg',
+        tablet: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/513x287/uruguay.jpg',
+        mobile: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/246x138/uruguay.jpg'
+      }}
+      category="Conozca Perú"
+      date="01 de Ene. 2020"
+      description="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya" />
+  </CardNoteGroup>
+</Playground>
+
+## Props
+
+<Props of={CardNote} />
