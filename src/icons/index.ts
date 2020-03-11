@@ -4,3 +4,6 @@ export { IconMenu } from './IconMenu';
 export { IconClose } from './IconClose';
 export { IconPrevArrow } from './IconPrevArrow';
 export { IconNextArrow } from './IconNextArrow';
+export { IconFacebook } from './IconFacebook';
+export { IconTwitter } from './IconTwitter';
+export { IconInstagram } from './IconInstagram';
