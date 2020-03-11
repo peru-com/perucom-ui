@@ -1,0 +1,90 @@
+---
+status: development
+menu: Components
+---
+
+import { SliderDemo, items } from '../demos/Slider';
+
+# Banner
+
+```js
+import { Slider } from '@peru-com/ui';
+```
+## Basic usage
+
+<Playground>
+  <SliderDemo />
+</Playground>
+
+```jsx
+const items = [
+  {
+    image: {
+      desktop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/924x530/uruguay.jpg',
+      laptop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/624x468/uruguay.jpg',
+      tablet: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/513x287/uruguay.jpg',
+      mobile: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/246x138/uruguay.jpg'
+    },
+    category: 'Conozca Perú',
+    date: '01 de Ene. 2020',
+    description: 'Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya'
+  },
+  {
+    image: {
+      desktop: 'https://cde.peru.com/ima/0/1/9/4/8/1948455/924x530/plaza-armas-trujillo.jpg',
+      laptop: 'https://cde.peru.com/ima/0/1/9/4/8/1948455/624x468/plaza-armas-trujillo.jpg',
+      tablet: 'https://cde.peru.com/ima/0/1/9/4/8/1948455/513x287/plaza-armas-trujillo.jpg',
+      mobile: 'https://cde.peru.com/ima/0/1/9/4/8/1948455/246x138/plaza-armas-trujillo.jpg'
+    },
+    category: 'Conozca Perú',
+    date: '01 de Ene. 2020',
+    description: 'Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya'
+  },
+  {
+    image: {
+      desktop: 'https://cde.peru.com/ima/0/1/7/6/5/1765856/924x530/londres.jpg',
+      laptop: 'https://cde.peru.com/ima/0/1/7/6/5/1765856/624x468/londres.jpg',
+      tablet: 'https://cde.peru.com/ima/0/1/7/6/5/1765856/513x287/londres.jpg',
+      mobile: 'https://cde.peru.com/ima/0/1/7/6/5/1765856/246x138/londres.jpg'
+    },
+    category: 'Conozca Perú',
+    date: '01 de Ene. 2020',
+    description: 'Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya'
+  },
+  {
+    image: {
+      desktop: 'https://cde.peru.com/ima/0/1/9/4/7/1947807/924x530/perucom.jpg',
+      laptop: 'https://cde.peru.com/ima/0/1/9/4/7/1947807/624x468/perucom.jpg',
+      tablet: 'https://cde.peru.com/ima/0/1/9/4/7/1947807/513x287/perucom.jpg',
+      mobile: 'https://cde.peru.com/ima/0/1/9/4/7/1947807/246x138/perucom.jpg'
+    },
+    category: 'Conozca Perú',
+    date: '01 de Ene. 2020',
+    description: 'Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya'
+  },
+  {
+    image: {
+      desktop: 'https://cde.peru.com/ima/0/1/9/4/6/1946731/924x530/callao.jpg',
+      laptop: 'https://cde.peru.com/ima/0/1/9/4/6/1946731/624x468/callao.jpg',
+      tablet: 'https://cde.peru.com/ima/0/1/9/4/6/1946731/513x287/callao.jpg',
+      mobile: 'https://cde.peru.com/ima/0/1/9/4/6/1946731/246x138/callao.jpg'
+    },
+    category: 'Conozca Perú',
+    date: '01 de Ene. 2020',
+    description: 'Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya'
+  },
+  {
+    image: {
+      desktop: 'https://cde.peru.com/ima/0/1/9/4/4/1944461/924x530/viajes.jpg',
+      laptop: 'https://cde.peru.com/ima/0/1/9/4/4/1944461/624x468/viajes.jpg',
+      tablet: 'https://cde.peru.com/ima/0/1/9/4/4/1944461/513x287/viajes.jpg',
+      mobile: 'https://cde.peru.com/ima/0/1/9/4/4/1944461/246x138/viajes.jpg'
+    },
+    category: 'Conozca Perú',
+    date: '01 de Ene. 2020',
+    description: 'Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya'
+  }
+];
+```
+
+## Props

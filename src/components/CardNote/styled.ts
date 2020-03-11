@@ -1,20 +1,19 @@
 import styled from 'styled-components';
 import { COLORS } from './../../ui';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.a`
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   max-width: 500px;
   max-height: 340px;
   padding: 10px;
   box-sizing: border-box;
+  text-decoration: none;
 `;
 
 export const Img = styled.img`
   display: flex;
   width: 100%;
-  min-width: 230px;
   max-height: 260px;
   border-radius: 4px;
   object-fit: cover;
@@ -28,7 +27,7 @@ export const BreadCrumb = styled.div`
   box-sizing: border-box;
 
   @media(min-width: 480px) {
-    font-size: 13px;
+    font-size: 12px;
   }
 `;
 
@@ -45,10 +44,6 @@ export const PublicationDate = styled.div`
 export const Description = styled.div`
   font-size: 14px;
   color: ${COLORS.SECONDARY600};
-
-  @media(min-width: 480px) {
-    font-size: 18px;
-  }
 `;
 
 const MAIN = 'CardNote';
