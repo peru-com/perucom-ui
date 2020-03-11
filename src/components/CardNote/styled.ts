@@ -4,7 +4,6 @@ import { COLORS } from './../../ui';
 export const Wrapper = styled.a`
   display: flex;
   flex-wrap: wrap;
-  max-width: 500px;
   max-height: 340px;
   padding: 10px;
   box-sizing: border-box;
