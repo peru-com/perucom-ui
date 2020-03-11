@@ -6,7 +6,9 @@ export { CardNote } from './components/CardNote';
 
 export {
   IconSearch,
-  IconAirplane
+  IconAirplane,
+  IconPrevArrow,
+  IconNextArrow
 } from './icons';
 
 export { COLORS } from './ui';
