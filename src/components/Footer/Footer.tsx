@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Wrapper,
+  FooterMainWrapper,
   FooterMain,
+  FooterSecondaryWrapper,
   FooterSecondary,
   LogoWrapper,
   Logo,
@@ -40,7 +41,8 @@ export const Footer: React.FC = ({ items }) => {
   };
 
   return(
-    <Wrapper>
+    <>
+    <FooterMainWrapper>
       <FooterMain>
         <LogoWrapper>
           <Logo onClick={handleClickHome}>
@@ -82,7 +84,9 @@ export const Footer: React.FC = ({ items }) => {
           </SocialMedia>
         </SocialMediaWrapper>
       </FooterMain>
-      { items.websites && 
+    </FooterMainWrapper>
+    { items.websites && 
+      <FooterSecondaryWrapper>
         <FooterSecondary>
           <Title>Visite también:</Title>
           <Websites>
@@ -91,8 +95,9 @@ export const Footer: React.FC = ({ items }) => {
                   <ItemText>{website.text}</ItemText> 
                 </WebSite>) }
           </Websites>
-            </FooterSecondary> }
-    </Wrapper>
+        </FooterSecondary>
+      </FooterSecondaryWrapper> }
+    </>
   );
 };
 

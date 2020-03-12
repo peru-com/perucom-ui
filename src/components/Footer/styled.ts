@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 import { COLORS } from './../../ui';
 
-export const Wrapper = styled.div`
+export const FooterMainWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   background-color: #F2F7FA;
+`;
+
+export const FooterSecondaryWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #ECEFF1;
 `;
 
 export const FooterMain = styled.div`
@@ -133,7 +140,7 @@ export const FooterSecondary = styled.div`
   margin: 0 auto;
   display: none;
   color: ${COLORS.TEXT};
-  padding: 0 20px 15px;
+  padding: 15px 20px 15px;
   box-sizing: border-box;
   font-size: 16px;
 
