@@ -12,18 +12,22 @@ import {
 } from './styled';
 
 interface Props {
+  link?: string;
   image?: string;
   price?: string;
   description?: string;
 }
 
 export const CardPackage: React.FC<Props> = ({
+  link,
   image,
   price,
   description
 }) => {
   return(
-    <Wrapper>
+    <Wrapper
+      href={link}
+      target="_blank">
       <ImgWrapper>
         <Img src={image} />
         <ImgOverlay />
@@ -41,6 +45,7 @@ export const CardPackage: React.FC<Props> = ({
 };
 
 CardPackage.propTypes = {
+  link: PropTypes.string,
   image: PropTypes.string,
   price: PropTypes.string,
   description: PropTypes.string

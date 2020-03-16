@@ -6,9 +6,9 @@ export const Wrapper = styled.a`
   flex-wrap: wrap;
   cursor: pointer;
   width: 100%;
-  max-width: 375px;
   border-radius: 4px;
-  padding: 5px;
+  padding: 10px;
+  text-decoration: none;
 `;
 
 export const ImgWrapper = styled.div`
@@ -17,7 +17,7 @@ export const ImgWrapper = styled.div`
   position: relative;
   border-radius: 4px;
   width: 100%;
-  padding-top: 75%;
+  padding-top: 54.16%;
   background: ${COLORS.DEFAULT};
 `;
 
@@ -28,7 +28,11 @@ export const Img = styled.img`
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
+  max-height: 260px;
   border-radius: 4px;
+  object-fit: cover;
+  object-position: center center;
 `;
 
 export const ImgOverlay = styled.div`
@@ -37,6 +41,7 @@ export const ImgOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  max-height: 260px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
   border-radius: 4px;
 `;
@@ -57,7 +62,7 @@ export const ImgDescription = styled.div`
 `;
 
 export const ImgPrice = styled.div`
-  font-family: montserrat-regular, sans-serif;
+  font-family: montserrat-bold, sans-serif;
   font-size: 20px;
 `;
 
@@ -70,7 +75,7 @@ export const ImgButton = styled.div`
   cursor: pointer;
   font-weight: bold;
   font-size: 15px;
-  font-family: montserrat-regular, sans-serif;
+  font-family: montserrat-bold, sans-serif;
 `;
 
 export const Description = styled.div`
