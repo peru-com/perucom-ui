@@ -2,6 +2,7 @@ export enum COLORS {
   DEFAULT = '#ECEFF1',
   WHITE = '#FFFFFF',
   BLACK = '#000000',
+  TITLE = '#2D2D2D',
   TEXT = '#58595B',
   PRIMARY = '#F31106',
   PRIMARY100 = '#FB716A',
