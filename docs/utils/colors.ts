@@ -12,6 +12,10 @@ export const DEFAULT = [
     name: 'BLACK'
   },
   {
+    color: '#2D2D2D',
+    name: 'TITLE'
+  },
+  {
     color: '#58595B',
     name: 'TEXT'
   }
