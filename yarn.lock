@@ -1084,15 +1084,15 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@papyrum/cli@1.9.1-alpha.0":
-  version "1.9.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@papyrum/cli/-/cli-1.9.1-alpha.0.tgz#73c7891d9126de1b44484cf82bbb5b625efca05e"
-  integrity sha512-1MAschImFe2suEhS0LI0qQT1exL3eAcWvaEsxMjbYTFs3619EXL5pl8m+p1znvFnXc8mCw5Vj7+y5fqDKaUqVg==
+"@papyrum/cli@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@papyrum/cli/-/cli-1.0.1.tgz#75c7a7a8a47d14ce5533d7545c66918bb1651a7a"
+  integrity sha512-2dwnGFfyI3thBnNCsCNC9EW4h2/0sMXvKvdjIjz/wYddgSTT9qQF3YpZEeU4CSKcPV7JSOv7yzq+hTHHOA40bQ==
   dependencies:
     "@mdx-js/react" "1.5.0"
-    "@papyrum/core" "^1.9.1-alpha.0"
-    "@papyrum/ui" "^1.9.1-alpha.0"
-    "@papyrum/ui-docs" "^1.9.1-alpha.0"
+    "@papyrum/core" "^1.0.1"
+    "@papyrum/ui" "^1.0.1"
+    "@papyrum/ui-docs" "^1.0.1"
     "@sindresorhus/slugify" "0.9.1"
     cpx "1.5.0"
     deepmerge "4.2.2"
@@ -1109,10 +1109,10 @@
     validate-npm-package-name "3.0.0"
     yargs "13.2.1"
 
-"@papyrum/core@^1.9.1-alpha.0":
-  version "1.9.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@papyrum/core/-/core-1.9.1-alpha.0.tgz#7e601a145c2e0ccb0e12c33cab092ac914094375"
-  integrity sha512-CabxdQucQDuwHlSH1vo4iamRJPwQgswYc+OgJ2eUpBb9uHd+iL0QKQmvt9+qCeM3lRgbkAyGrWQM7caqoaqWhw==
+"@papyrum/core@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@papyrum/core/-/core-1.0.1.tgz#4d40643133507a52d31e63a1ae74d7e511921aa6"
+  integrity sha512-DAScwe9JjPw3UM8dBWbLR5XUB99TeAgvTMsgnHXONYciRuQkXN/WK3YxIXPXwAEeyB6M4J9w/PDyHGvA04Uwig==
   dependencies:
     "@babel/core" "7.3.3"
     "@babel/generator" "7.4.0"
@@ -1165,12 +1165,12 @@
     webpack-dev-server "3.2.1"
     webpackbar "4.0.0"
 
-"@papyrum/ui-docs@^1.9.1-alpha.0":
-  version "1.9.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@papyrum/ui-docs/-/ui-docs-1.9.1-alpha.0.tgz#971db83c2d380d45b62d57b7c47af4e289f4be3b"
-  integrity sha512-RNp7rbRzUcn64BU9Vdv7f9V5Bsz+Vqp9xEQ0en5dud7XK4wcDmPovglYEykDg2Mx87wdEkz4H0b3XBNCi4nPuQ==
+"@papyrum/ui-docs@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@papyrum/ui-docs/-/ui-docs-1.0.1.tgz#3b07098a0ab6d4ff5abb0c03b2a6e2983f6d4f90"
+  integrity sha512-oTTRUM4tfkWHHm4b625Wx+zhOMDf4L0BFmq0FrS6BFiUho8lAy2D83XaE/RPfcAweIkBasmsG5876uIUj2vggw==
   dependencies:
-    "@papyrum/ui" "^1.9.1-alpha.0"
+    "@papyrum/ui" "^1.0.1"
     copy-text-to-clipboard "2.1.0"
     react "16.8.6"
     react-dom "16.8.6"
@@ -1180,10 +1180,10 @@
     react-simple-code-editor "0.10.0"
     styled-components "4.3.2"
 
-"@papyrum/ui@^1.9.1-alpha.0":
-  version "1.9.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@papyrum/ui/-/ui-1.9.1-alpha.0.tgz#16ea1b5d9ed453cbc2723a9915f5426c207830a9"
-  integrity sha512-TTxpIYojLgTfA1OychB8/ASE8OkULwnQF8ewi29WWoBUjXBy6J8V8QI8NH0hqzrGKbzgIDiFs9TvwUMq8MDkhg==
+"@papyrum/ui@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@papyrum/ui/-/ui-1.0.1.tgz#acf59ead8dbe2748f00cab1d742bdc0700af5ec8"
+  integrity sha512-Pv3+WOxX8zykpx4Dh4PZKcsODkjkjdZ2S/4EuNA2KDqW6HmydzGnwQZUyLj2obLddRo0fr9zXgHXEzVPxTwEyg==
   dependencies:
     copy-text-to-clipboard "2.1.0"
     polished "3.4.2"

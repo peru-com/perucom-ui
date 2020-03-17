@@ -82,9 +82,13 @@ export const Description = styled.div`
   width: 100%;
   color: ${COLORS.TITLE};
   font-size: 18px;
-  padding: 6px 0;
+  margin: 6px 0;
   box-sizing: border-box;
   font-family: montserrat-medium, sans-serif;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 `;
 
 const MAIN = 'CardPackage';
