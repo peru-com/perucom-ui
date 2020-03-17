@@ -17,7 +17,7 @@ export const ImgWrapper = styled.div`
   position: relative;
   border-radius: 4px;
   width: 100%;
-  padding-top: 54.16%;
+  padding-top: 51.58%;
   background: ${COLORS.DEFAULT};
 `;
 
