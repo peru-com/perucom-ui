@@ -5,7 +5,7 @@ name: CardNote
 ---
 
 import { CardNote } from '../src/components/CardNote';
-import { CardNoteGroup } from '../demos/CardNote';
+import { CardWrapper, CardGroup } from '../demos/CardNote';
 
 # CardNote
 
@@ -15,8 +15,8 @@ import { CardNote } from '@peru-com/ui';
 ## Basic usage
 
 <Playground>
-  <CardNoteGroup>
-    <CardNote 
+  <CardWrapper>
+    <CardNote
       image={{
         desktop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/924x530/uruguay.jpg',
         laptop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/624x468/uruguay.jpg',
@@ -25,14 +25,14 @@ import { CardNote } from '@peru-com/ui';
       }}
       category="Conozca Perú"
       date="01 de Ene. 2020"
-      description="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya" />
-  </CardNoteGroup>
+      title="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya" />
+  </CardWrapper>
 </Playground>
 
 ## Card Group
 
 ```jsx
-const CardNoteGroup = styled.div`
+const CardGroup = styled.div`
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -40,8 +40,8 @@ const CardNoteGroup = styled.div`
 ```
 
 <Playground>
-  <CardNoteGroup>
-    <CardNote 
+  <CardGroup>
+    <CardNote
       image={{
         desktop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/924x530/uruguay.jpg',
         laptop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/624x468/uruguay.jpg',
@@ -50,8 +50,8 @@ const CardNoteGroup = styled.div`
       }}
       category="Conozca Perú"
       date="01 de Ene. 2020"
-      description="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya" />
-    <CardNote 
+      title="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya nacieron 4 futbolistas de la selección uruguaya" />
+    <CardNote
       image={{
         desktop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/924x530/uruguay.jpg',
         laptop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/624x468/uruguay.jpg',
@@ -60,8 +60,8 @@ const CardNoteGroup = styled.div`
       }}
       category="Conozca Perú"
       date="01 de Ene. 2020"
-      description="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya" />
-    <CardNote 
+      title="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya" />
+    <CardNote
       image={{
         desktop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/924x530/uruguay.jpg',
         laptop: 'https://cde.peru.com/ima/0/1/9/4/2/1942177/624x468/uruguay.jpg',
@@ -70,8 +70,8 @@ const CardNoteGroup = styled.div`
       }}
       category="Conozca Perú"
       date="01 de Ene. 2020"
-      description="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya" />
-  </CardNoteGroup>
+      title="Conoce los lugares donde nacieron 4 futbolistas de la selección uruguaya" />
+  </CardGroup>
 </Playground>
 
 ## Props

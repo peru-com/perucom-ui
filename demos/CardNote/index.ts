@@ -1,1 +1,1 @@
-export { CardNoteGroup } from './CardNote';
+export { CardWrapper, CardGroup } from './CardNote';

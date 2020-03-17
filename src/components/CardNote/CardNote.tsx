@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Wrapper,
+  ImgWrapper,
   Img,
   BreadCrumb,
   Category,
@@ -31,14 +32,15 @@ export const CardNote: React.FC<Props> = ({
   link
 }) => (
   <Wrapper href={link}>
-    <Img
-        src={image.desktop}
-        srcSet={`
-          ${image.mobile} 480w,
-          ${image.tablet} 768w,
-          ${image.laptop} 960w,
-          ${image.desktop} 1024w`}
-        alt={image.description} />
+    <ImgWrapper>
+      <Img
+          src={image.mobile}
+          srcSet={`
+            ${image.mobile} 744w,
+            ${image.tablet} 1128w,
+            ${image.laptop} 1440w`}
+          alt={image.description} />
+    </ImgWrapper>
     <BreadCrumb>
       { category && <Category>{category}</Category> }
       { date && <PublicationDate>/ {date}</PublicationDate> }

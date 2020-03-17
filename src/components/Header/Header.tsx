@@ -7,7 +7,7 @@ import {
 } from './styled';
 import { Menu } from './Menu';
 import { Main } from './Main';
-import { NavBar } from './NavBar'; 
+import { NavBar } from './NavBar';
 import { useToggle } from './hooks';
 
 interface Props {
@@ -26,12 +26,14 @@ export const Header: React.FC<Props> = ({
   const toggle = useToggle();
 
   const handleClickHome = () => {
-    window.location.replace('https://peru.com');
+    window.location.href = 'https://peru.com';
   };
 
   const searchByInputValue = (value: string) => {
     const isNotEmpty = !!value;
-    isNotEmpty && window.location.replace(`http://peru.buscamas.pe/${value}`);
+    if(isNotEmpty) {
+      window.location.href = `http://peru.buscamas.pe/${value}`;
+    }
   };
 
   const handleClickButton = () => {
@@ -42,7 +44,7 @@ export const Header: React.FC<Props> = ({
     return(
       <Wrapper
         isFixed={isFixed}
-        isDarkMode={isDarkMode}> 
+        isDarkMode={isDarkMode}>
         { children }
       </Wrapper>
     );
