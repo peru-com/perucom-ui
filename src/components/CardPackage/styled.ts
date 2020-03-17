@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { COLORS } from './../../ui';
 
-export const Wrapper = styled.a`
+export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   cursor: pointer;

@@ -22,12 +22,12 @@ export const CardPackage: React.FC<Props> = ({
   link,
   image,
   price,
-  description
+  description,
+  onClick
 }) => {
   return(
     <Wrapper
-      href={link}
-      target="_blank">
+      onClick={onClick}>
       <ImgWrapper>
         <Img src={image} />
         <ImgOverlay />
