@@ -20,8 +20,8 @@ export const Wrapper = styled.div`
   align-items: center;
   overflow: hidden;
   margin: 0 auto;
-  width: ${(props: Props) => props.width 
-    ? props.width 
+  width: ${(props: Props) => props.width
+    ? props.width
     : '100%'};
 
   @media(min-width: 768px) {
@@ -32,14 +32,14 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   display: flex;
   height: 100%;
-  width: ${(props: Props) => props.width 
-    ? props.width 
+  width: ${(props: Props) => props.width
+    ? props.width
     : '100%'};
-  transform: ${(props: Props) => props.offset > 0 
+  transform: ${(props: Props) => props.offset > 0
     ? `translate3d(-${(props.offset)}px, 0px, 0px)`
     : `translate3d(0px, 0px, 0px)`};
-  transition: ${(props: Props) => props.transition 
-    ? props.transition 
+  transition: ${(props: Props) => props.transition
+    ? props.transition
     : 'none'};
 `;
 
@@ -83,8 +83,8 @@ export const DotsGroup = styled.div`
 
 export const Dot = styled.div`
   cursor: pointer;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   margin: 0 3px;
   background-color: ${COLORS.WHITE};

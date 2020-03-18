@@ -43,7 +43,7 @@ export const Content = styled.div`
 `;
 
 export const Category = styled.div`
-  font-family: montserrat-regular;
+  font-family: montserrat-regular, sans-serif;
   font-size: 16px;
   text-transform: uppercase;
 
@@ -53,7 +53,11 @@ export const Category = styled.div`
 `;
 
 export const Title = styled.div`
-  font-family: montserrat-black;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-family: montserrat-black, sans-serif;
   font-size: 20px;
 
   @media(min-width: 768px) {
@@ -62,7 +66,7 @@ export const Title = styled.div`
 `;
 
 export const PublicationDate = styled.div`
-  font-family: montserrat-extralight;
+  font-family: montserrat-regular, sans-serif;
   font-size: 12px;
 
   @media(min-width: 768px) {
