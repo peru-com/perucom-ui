@@ -51,7 +51,7 @@ export const Logo = styled.div`
   cursor: pointer;
 `;
 
-export const Info = styled.div`
+export const Info = styled.ul`
   order: 3;
   font-size: 14px;
   display: flex;
@@ -70,14 +70,19 @@ export const Info = styled.div`
   }
 `;
 
-export const Item = styled.a`
+export const Item = styled.li`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  min-width: 190px;
+`;
+
+export const Link = styled.a`
   display: flex;
   align-items: center;
   text-decoration: none;
   color: ${COLORS.TEXT};
-  padding: 5px 10px;
-  box-sizing: border-box;
-  min-width: 190px;
 `;
 
 export const List = styled.div`
@@ -166,3 +171,25 @@ export const WebSite = styled.a`
   text-decoration: none;
   color: ${COLORS.TEXT};
 `;
+
+const MAIN = 'Footer';
+
+FooterMainWrapper.displayName = `${MAIN}/FooterMainWrapper`;
+FooterSecondaryWrapper.displayName = `${MAIN}/FooterSecondaryWrapper`;
+FooterMain.displayName = `${MAIN}/FooterMain`;
+LogoWrapper.displayName = `${MAIN}/LogoWrapper`;
+Logo.displayName = `${MAIN}/Logo`;
+Info.displayName = `${MAIN}/Info`;
+Item.displayName = `${MAIN}/Item`;
+Link.displayName = `${MAIN}/Link`;
+List.displayName = `${MAIN}/List`;
+ItemText.displayName = `${MAIN}/ItemText`;
+SocialMediaWrapper.displayName = `${MAIN}/SocialMediaWrapper`;
+SocialMedia.displayName = `${MAIN}/SocialMedia`;
+Text.displayName = `${MAIN}/Text`;
+IconGroup.displayName = `${MAIN}/IconGroup`;
+IconWrapper.displayName = `${MAIN}/IconWrapper`;
+FooterSecondary.displayName = `${MAIN}/FooterSecondary`;
+Title.displayName = `${MAIN}/Title`;
+Websites.displayName = `${MAIN}/Websites`;
+WebSite.displayName = `${MAIN}/WebSite`;

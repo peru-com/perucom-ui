@@ -13,6 +13,7 @@ import {
   IconWrapper,
   Info,
   Item,
+  Link,
   List,
   ItemText,
   Text,
@@ -23,21 +24,50 @@ import {
 import { COLORS } from './../../ui';
 import { IconFacebook, IconTwitter, IconInstagram } from './../../icons';
 
-export const Footer: React.FC = ({ items }) => {
+interface Content {
+  text?: string;
+  link?: string;
+  onClick?: Function;
+}
+
+interface Items {
+  info?: Content[];
+  websites?: Content[];
+}
+
+interface Props {
+  items?: Items;
+  onClickLogo?: Function;
+  onClickFacebook?: Function;
+  onClickTwitter?: Function;
+  onClickInstagram?: Function;
+}
+
+export const Footer: React.FC<Props> = ({
+  items,
+  onClickLogo,
+  onClickFacebook,
+  onClickTwitter,
+  onClickInstagram
+}) => {
   const handleClickHome = () => {
     window.location.href = 'https://peru.com';
+    onClickLogo && onClickLogo();
   };
 
   const handleClickFacebook = () => {
     window.location.href = 'https://www.facebook.com/peru.com.und/';
+    onClickFacebook && onClickFacebook();
   };
 
   const handleClickTwitter = () => {
     window.location.href = 'https://twitter.com/perucomweb';
+    onClickTwitter && onClickTwitter();
   };
 
   const handleClickInstagram = () => {
     window.location.href = 'https://www.instagram.com/portalperucom/';
+    onClickInstagram && onClickInstagram();
   };
 
   return(
@@ -61,10 +91,17 @@ export const Footer: React.FC = ({ items }) => {
           </Logo>
         </LogoWrapper>
         <Info>
-          { items.info.map((item, index) =>
-            <Item key={index} href={item.link} target="_blank">
-              <List />
-              <ItemText>{item.text}</ItemText> 
+          { items
+            && items.info.map((item, index) =>
+            <Item
+              key={index}
+              onClick={item.onClick}>
+              <Link
+                href={item.link}
+                target="_blank">
+                <List />
+                <ItemText>{item.text}</ItemText>
+              </Link>
             </Item>) }
         </Info>
         <SocialMediaWrapper>
@@ -85,14 +122,18 @@ export const Footer: React.FC = ({ items }) => {
         </SocialMediaWrapper>
       </FooterMain>
     </FooterMainWrapper>
-    { items.websites && 
+    { (items && items.websites) &&
       <FooterSecondaryWrapper>
         <FooterSecondary>
           <Title>Visite también:</Title>
           <Websites>
             { items.websites.map((website, index) =>
-                <WebSite key={index} href={website.link} target="_blank">
-                  <ItemText>{website.text}</ItemText> 
+                <WebSite
+                  key={index}
+                  href={website.link}
+                  target="_blank"
+                  onClick={website.onClick}>
+                  <ItemText>{website.text}</ItemText>
                 </WebSite>) }
           </Websites>
         </FooterSecondary>
@@ -100,5 +141,13 @@ export const Footer: React.FC = ({ items }) => {
     </>
   );
 };
+
+Footer.propTypes = {
+  items: PropTypes.any,
+  onClickLogo: PropTypes.func,
+  onClickFacebook: PropTypes.func,
+  onClickTwitter: PropTypes.func,
+  onClickInstagram: PropTypes.func
+}
 
 Footer.displayName = 'Footer';
