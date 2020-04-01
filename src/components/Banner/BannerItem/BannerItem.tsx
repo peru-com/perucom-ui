@@ -26,12 +26,13 @@ interface Item {
 
 interface Props {
   item?: Item;
+  onClick?: Function;
 }
 
-export const BannerItem: React.FC<Props> = ({ item }) => (
-  <Item>
+export const BannerItem: React.FC<Props> = ({ item, onClick }) => (
+  <Item onClick={onClick}>
     <Link href={item.link}>
-      <Img 
+      <Img
         src={item.image.sizes.desktop}
         srcSet={`
           ${item.image.sizes.mobile} 480w,
@@ -53,9 +54,8 @@ export const BannerItem: React.FC<Props> = ({ item }) => (
 );
 
 BannerItem.propTypes = {
-  link: PropTypes.string,
-  image: PropTypes.string,
-  renderComponent: PropTypes.node
+  item: PropTypes.any,
+  onClick: PropTypes.func
 };
 
 BannerItem.displayName = 'BannerItem';

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { 
-  Wrapper, 
+import {
+  Wrapper,
   Content,
   ActionPrev,
   ActionNext,
@@ -12,28 +12,36 @@ import { IconNextArrow, IconPrevArrow } from './../../icons';
 
 interface Props {
   width: string;
+  onClickPrevItem?: Function;
+  onClickNextItem?: Function;
+  onClickDot?: Function;
   children?: any;
 }
 
 export const Banner: React.FC<Props> = ({
   width,
+  onClickPrevItem,
+  onClickNextItem,
+  onClickDot,
   children
 }) => {
-  const [ isSlide, setIsSlide ] = useState(false);  
+  const [ isSlide, setIsSlide ] = useState(false);
   const [ transition, setTransition ] = useState('');
-  const [ widthCarrousel, setWidthCarrousel ] = useState(''); 
+  const [ widthCarrousel, setWidthCarrousel ] = useState('');
   const [ position, setPosition ] = useState(1);
 
-  const isOneItem: boolean = children.length > 1;
+  const isMoreThanOneItem: boolean = children.length > 1;
   const widthSize: number = Number.parseInt(width, 0);
   const numberOfItems: number = children.length;
-  
+
   const handlePrevItem = () => {
     doSlide(-1);
+    onClickPrevItem && onClickPrevItem();
   };
 
   const handleNextItem = () => {
     doSlide(1);
+    onClickNextItem && onClickNextItem();
   };
 
   const doSlide = (direction: number) => {
@@ -49,7 +57,7 @@ export const Banner: React.FC<Props> = ({
   }, []);
 
   useEffect(() => {
-    const interval = isOneItem &&
+    const interval = isMoreThanOneItem &&
       setInterval(() => {
         doSlide(1);
       }, 5000);
@@ -60,11 +68,11 @@ export const Banner: React.FC<Props> = ({
     const firstElement: number = 1;
     const lastElement: number = numberOfItems;
     let newPosition: number = position;
-    newPosition = position === 0 
-      ? lastElement 
+    newPosition = position === 0
+      ? lastElement
       : newPosition;
-    newPosition = position > lastElement 
-      ? firstElement 
+    newPosition = position > lastElement
+      ? firstElement
       : newPosition;
     setIsSlide(false);
     setPosition(newPosition);
@@ -75,12 +83,13 @@ export const Banner: React.FC<Props> = ({
     setIsSlide(true);
     setPosition(position + 1);
     setTransition('all 1.2s linear 0s');
+    onClickDot && onClickDot(position + 1);
   };
 
   return(
     <Wrapper width={width}>
-      <Content 
-        width={widthCarrousel} 
+      <Content
+        width={widthCarrousel}
         offset={position * widthSize}
         transition={transition}
         onTransitionEnd={onTransitionEnd}
@@ -89,7 +98,7 @@ export const Banner: React.FC<Props> = ({
         { children }
         { children.filter((child, index) => index === 0) }
       </Content>
-      { isOneItem && (
+      { isMoreThanOneItem && (
         <>
           <ActionPrev onClick={handlePrevItem}>
             <IconPrevArrow color="#FFFFFF" width="40" height="50" />
@@ -99,7 +108,7 @@ export const Banner: React.FC<Props> = ({
           </ActionNext>
           <DotsGroup>
             { children.map((item, index) => (
-              <Dot 
+              <Dot
                 key={index}
                 isSelected={position === index + 1}
                 onClick={() => handleClickDot(index)} />
@@ -113,6 +122,9 @@ export const Banner: React.FC<Props> = ({
 
 Banner.propTypes = {
   width: PropTypes.string.isRequired,
+  onClickPrevItem: PropTypes.func,
+  onClickNextItem: PropTypes.func,
+  onClickDot: PropTypes.func,
   children: PropTypes.any
 };
 
