@@ -4,7 +4,7 @@ menu: Components
 ---
 
 import { BannerDemo, items } from '../demos/Banner';
-import { Banner, BannerItem } from '../src/components/Banner';   
+import { Banner, BannerItem } from '../src/components/Banner';
 
 # Banner
 
@@ -50,7 +50,7 @@ const items = [
 
 <Playground>
   <Banner>
-    {items.map((item, index) => 
+    {items.map((item, index) =>
       <BannerItem key={index} item={item} />)}
   </Banner>
 </Playground>
@@ -81,7 +81,7 @@ const BannerDemo: React.FC = () => {
     <div style={{ width: '100%' }} ref={wrapperRef}>
       {wrapperRef.current && (
         <Banner width={`${width}px`}>
-          {items.map((item, index) => 
+          {items.map((item, index) =>
             <BannerItem key={index} item={item} />)}
         </Banner>)}
     </div>
