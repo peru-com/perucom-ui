@@ -22,6 +22,7 @@ interface Props {
   category?: string;
   date?: string;
   title?: string;
+  onClick?: Function;
 }
 
 export const CardNote: React.FC<Props> = ({
@@ -29,9 +30,12 @@ export const CardNote: React.FC<Props> = ({
   category,
   date,
   title,
-  link
+  link,
+  onClick
 }) => (
-  <Wrapper href={link}>
+  <Wrapper
+    href={link}
+    onClick={onClick}>
     <ImgWrapper>
       <Img
           src={image.mobile}
@@ -53,7 +57,8 @@ CardNote.propTypes = {
   image: PropTypes.objectOf(PropTypes.string),
   category: PropTypes.string,
   date: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 CardNote.displayName = 'CardNote';

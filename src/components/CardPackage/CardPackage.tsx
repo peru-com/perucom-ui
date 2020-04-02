@@ -16,18 +16,21 @@ interface Props {
   image?: string;
   price?: string;
   description?: string;
+  onClick?: Function;
 }
 
 export const CardPackage: React.FC<Props> = ({
   link,
   image,
   price,
-  description
+  description,
+  onClick
 }) => {
   return(
     <Wrapper
       href={link}
-      target="_blank">
+      target="_blank"
+      onClick={onClick}>
       <ImgWrapper>
         <Img src={image} />
         <ImgOverlay />
@@ -48,7 +51,8 @@ CardPackage.propTypes = {
   link: PropTypes.string,
   image: PropTypes.string,
   price: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 CardPackage.displayName = 'CardPackage';
