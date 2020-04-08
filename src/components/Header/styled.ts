@@ -23,29 +23,30 @@ export const HeaderContent = styled.div`
 export const Wrapper = styled.div`
   width: 100%;
   z-index: 1000;
-  box-shadow: ${(props: Props) => !props.isDarkMode 
+  top: 0;
+  box-shadow: ${(props: Props) => !props.isDarkMode
     && '0px 1px 6px rgba(0, 0, 0, 0.21)'};
-  position: ${(props: Props) => props.isFixed 
+  position: ${(props: Props) => props.isFixed
     ? 'fixed'
     : 'sticky'};
-  background-color: ${(props: Props) => props.isDarkMode 
+  background-color: ${(props: Props) => props.isDarkMode
     ? 'transparent'
     : `${COLORS.WHITE}`};
 
   ${HeaderContent} {
-    background-color: ${(props: Props) => props.isDarkMode 
+    background-color: ${(props: Props) => props.isDarkMode
       ? 'transparent'
       : `${COLORS.WHITE}`};
   }
 
   ${MainWrapper} {
-    background-color: ${(props: Props) => props.isDarkMode 
+    background-color: ${(props: Props) => props.isDarkMode
       ? 'transparent'
       : `${COLORS.WHITE}`};
   }
 
   ${NavBarWrapper} {
-    color: ${(props: Props) => props.isDarkMode 
+    color: ${(props: Props) => props.isDarkMode
       ? `${COLORS.WHITE}`
       : `${COLORS.TEXT}`};
   }
@@ -65,7 +66,7 @@ export const Overlay = styled.div`
 
   @media(min-width: 960px) {
     display: none;
-  } 
+  }
 `;
 
 Wrapper.displayName = 'Wrapper';

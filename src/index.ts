@@ -10,7 +10,10 @@ export {
   IconSearch,
   IconAirplane,
   IconPrevArrow,
-  IconNextArrow
+  IconNextArrow,
+  IconFacebook,
+  IconInstagram,
+  IconTwitter
 } from './icons';
 
 export { COLORS } from './ui';
