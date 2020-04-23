@@ -37,6 +37,7 @@ export const Img = styled.img`
 
 export const BreadCrumb = styled.div`
   display: flex;
+  width: 100%;
   font-size: 10px;
   padding-top: 6px;
   box-sizing: border-box;
