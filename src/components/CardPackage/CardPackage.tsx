@@ -11,9 +11,15 @@ import {
   Description
 } from './styled';
 
+interface Image {
+  default?: string;
+  class?: string;
+  main?: string;
+}
+
 interface Props {
   link?: string;
-  image?: string;
+  image: Image;
   price?: string;
   description?: string;
   onClick?: Function;
@@ -32,7 +38,11 @@ export const CardPackage: React.FC<Props> = ({
       target="_blank"
       onClick={onClick}>
       <ImgWrapper>
-        <Img src={image} />
+        <Img
+          className={image.class}
+          src={image.default}
+          alt={description}
+          data-src={image.main} />
         <ImgOverlay />
         <ImgDescription>
           <div>
@@ -49,7 +59,7 @@ export const CardPackage: React.FC<Props> = ({
 
 CardPackage.propTypes = {
   link: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.objectOf(PropTypes.string),
   price: PropTypes.string,
   description: PropTypes.string,
   onClick: PropTypes.func

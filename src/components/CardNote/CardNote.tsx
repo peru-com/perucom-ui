@@ -11,14 +11,17 @@ import {
 } from './styled';
 
 interface Image {
+  default: string;
+  class?: string;
   mobile?: string;
   tablet?: string;
   laptop?: string;
   desktop?: string;
+  description?: string;
 }
 
 interface Props {
-  image?: Image;
+  image: Image;
   category?: string;
   date?: string;
   title?: string;
@@ -38,12 +41,14 @@ export const CardNote: React.FC<Props> = ({
     onClick={onClick}>
     <ImgWrapper>
       <Img
-          src={image.mobile}
-          srcSet={`
+          className={image.class}
+          src={image.default}
+          alt={image.description}
+          data-src={image.mobile}
+          data-srcset={`
             ${image.mobile} 744w,
             ${image.tablet} 1128w,
-            ${image.laptop} 1440w`}
-          alt={image.description} />
+            ${image.laptop} 1440w`} />
     </ImgWrapper>
     <BreadCrumb>
       { category && <Category>{category}</Category> }
