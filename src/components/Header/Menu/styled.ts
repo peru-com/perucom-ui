@@ -27,7 +27,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const MenuStyled = styled.ul`
+export const MenuStyled = styled.div`
   padding: 0;
   margin: 0;
   width: 100%;
@@ -79,7 +79,7 @@ export const BarSelected = styled.div`
   background-color: red;
 `;
 
-export const ItemWrapper = styled.li`
+export const ItemWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   list-style: none;

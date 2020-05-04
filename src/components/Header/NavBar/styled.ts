@@ -5,7 +5,7 @@ interface Props {
   isSelected?: boolean;
 }
 
-export const Wrapper = styled.ul`
+export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 0;
@@ -26,7 +26,7 @@ export const BarSelected = styled.div`
   background-color: red;
 `;
 
-export const ItemWrapper = styled.li`
+export const ItemWrapper = styled.div`
   display: none;
   list-style: none;
   margin: 0 15px;
@@ -47,15 +47,15 @@ export const ItemWrapper = styled.li`
 
   @media(min-width: 960px) {
     display: inline-block;
-  } 
+  }
 `;
 
 export const ButtonWrapper = styled.div`
   display: none;
-  
+
   @media(min-width: 768px) {
     display: block;
-  } 
+  }
 `;
 
 Wrapper.displayName = 'Wrapper';

@@ -98,7 +98,8 @@ export const Footer: React.FC<Props> = ({
               onClick={item.onClick}>
               <Link
                 href={item.link}
-                target="_blank">
+                target="_blank"
+                rel="noopener">
                 <List />
                 <ItemText>{item.text}</ItemText>
               </Link>
@@ -132,6 +133,7 @@ export const Footer: React.FC<Props> = ({
                   key={index}
                   href={website.link}
                   target="_blank"
+                  rel="noopener"
                   onClick={website.onClick}>
                   <ItemText>{website.text}</ItemText>
                 </WebSite>) }

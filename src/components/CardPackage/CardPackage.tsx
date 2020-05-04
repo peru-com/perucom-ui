@@ -36,6 +36,7 @@ export const CardPackage: React.FC<Props> = ({
     <Wrapper
       href={link}
       target="_blank"
+      rel="noopener"
       onClick={onClick}>
       <ImgWrapper>
         <Img

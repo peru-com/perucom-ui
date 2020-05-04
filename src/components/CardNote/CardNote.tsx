@@ -38,6 +38,7 @@ export const CardNote: React.FC<Props> = ({
 }) => (
   <Wrapper
     href={link}
+    rel="noopener"
     onClick={onClick}>
     <ImgWrapper>
       <Img
